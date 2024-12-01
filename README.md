@@ -18,6 +18,7 @@ Here's how it would look like if you're using [lazy.nvim](https://github.com/fol
     dependencies = {
         "nvim-treesitter/nvim-treesitter",
         { url = "https://gitlab.com/spade-lang/spade-vim" },
+        "neovim/nvim-lspconfig",
     },
     config = function()
         require("spade").setup({
