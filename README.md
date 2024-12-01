@@ -7,14 +7,12 @@ Here's how it would look like if you're using [lazy.nvim](https://github.com/fol
 
 ```lua
 {
-    "ethanuppal/spade.nvim",
-    dependencies = {
-        "nvim-treesitter/nvim-treesitter"
-    },
+    "ethanuppal/spade.nvim", 
     config = function()
         require("spade").setup()
     end
 }
 ```
 
-Then, run `:TSInstall spade` once.
+Then, run `:TSInstall spade` one time.
+You can later `:TSUninstall spade`.
