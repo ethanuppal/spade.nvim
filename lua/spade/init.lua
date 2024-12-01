@@ -20,10 +20,10 @@ local function setup_treesitter()
 end
 
 local function setup_lsp()
-	vim.lsp.start({
-		cmd = { M.config.lsp_command },
-		root_dir = vim.fn.getcwd(),
-	})
+	-- vim.lsp.start({
+	-- 	cmd = { M.config.lsp_command },
+	-- 	root_dir = vim.fn.getcwd(),
+	-- })
 
 	-- vim.api.nvim_create_autocmd("FileType", {
 	-- 	pattern = "spade",
