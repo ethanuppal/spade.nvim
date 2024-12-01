@@ -8,9 +8,13 @@ Here's how it would look like if you're using [lazy.nvim](https://github.com/fol
 ```lua
 {
     "ethanuppal/spade.nvim",
-    event = "VeryLazy",
     dependencies = {
         "nvim-treesitter/nvim-treesitter"
-    }
+    },
+    config = function()
+        require("spade").setup()
+    end
 }
 ```
+
+Then, run `:TSInstall spade` once.
