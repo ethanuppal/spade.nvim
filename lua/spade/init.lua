@@ -20,9 +20,16 @@ local function setup_treesitter()
 end
 
 local function setup_lsp()
-	vim.lsp.start({
-		cmd = { M.config.lsp_command },
-		root_dir = vim.fn.getcwd(),
+	vim.api.nvim_create_autocmd("FileType", {
+		pattern = "spade",
+		callback = function()
+			-- Your custom LSP setup for Spade files
+			vim.lsp.start({
+				name = "spade-lsp",
+				cmd = { M.config.lsp_command },
+				root_dir = vim.fs.dirname(vim.fs.find({ "swim.toml" }, { upward = true })[1]),
+			})
+		end,
 	})
 end
 
