@@ -20,10 +20,10 @@ local function setup_treesitter()
 end
 
 local function setup_lsp()
+	-- see https://neovim.discourse.group/t/how-to-add-a-custom-server-to-nvim-lspconfig/3925
 	vim.api.nvim_create_autocmd("FileType", {
 		pattern = "spade",
 		callback = function()
-			-- Your custom LSP setup for Spade files
 			vim.lsp.start({
 				name = "spade-lsp",
 				cmd = { M.config.lsp_command },

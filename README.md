@@ -1,5 +1,7 @@
 # spade.nvim
 
+![Example usage of the plugin](./assets/spade.gif)
+
 ## Features
 
 - Syntax highlighting
@@ -15,6 +17,8 @@ rust](https://www.rust-lang.org/tools/install)):
 ```sh
 cargo install --locked --git https://gitlab.com/spade-lang/spade-language-server
 ```
+
+### Recommended
 
 Alternatively, you can also build the LSP yourself with changes if it's not up-to-date with the
 latest in Spade, as I have done:
