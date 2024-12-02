@@ -1,6 +1,6 @@
 # spade.nvim
 
-![Example usage of the plugin](./assets/spade.gif)
+![Example usage of the plugin](./assets/spade-github-dark.gif)
 
 ## Features
 
