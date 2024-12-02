@@ -4,6 +4,15 @@ Neovim language support for [Spade](https://spade-lang.org).
 
 ![Example usage of the plugin](./assets/spade-github-dark.gif)
 
+## Contents
+
+- [Features](#features)
+- [Install](#install)
+  - [Recommended install](#install-recommended)
+- [Help](#help)
+
+<a name="features"></a>
+
 ## Features
 
 - Syntax highlighting
@@ -11,7 +20,12 @@ Neovim language support for [Spade](https://spade-lang.org).
 - Code completion
 - Hover
 
+<a name="install"></a>
+
 ## Install
+
+> [!NOTE]
+> This section assumes a Unix-like operating system.
 
 First, you'll want to grab the Spade LSP (you might need to [install
 rust](https://www.rust-lang.org/tools/install)):
@@ -19,6 +33,8 @@ rust](https://www.rust-lang.org/tools/install)):
 ```sh
 cargo install --locked --git https://gitlab.com/spade-lang/spade-language-server
 ```
+
+<a name="install-recommended"></a>
 
 ### Recommended
 
@@ -51,3 +67,11 @@ Here's how it would look like if you're using [lazy.nvim](https://github.com/fol
 
 Then, run `:TSInstall spade` one time.
 You can later `:TSUninstall spade`.
+
+<a name="help"></a>
+
+## Help
+
+### Why isn't the LSP activating? I checked with `top` (or similar) and don't see the LSP process
+
+Make sure you have a [`swim.toml`](https://docs.spade-lang.org/swim_project_configuration/config__Config.html) somewhere up your tree -- the LSP will activate in that directory.
