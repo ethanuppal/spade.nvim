@@ -1,5 +1,7 @@
 # spade.nvim
 
+Neovim language support for [Spade](https://spade-lang.org).
+
 ![Example usage of the plugin](./assets/spade-github-dark.gif)
 
 ## Features
@@ -27,7 +29,7 @@ latest in Spade, as I have done:
 cargo install --locked --git https://gitlab.com/ethanuppal/spade-language-server
 ```
 
-Install the plugin with your preferred package manager.
+Then, install the plugin with your preferred package manager.
 Here's how it would look like if you're using [lazy.nvim](https://github.com/folke/lazy.nvim):
 
 ```lua
