@@ -1,5 +1,12 @@
 # spade.nvim
 
+## Features
+
+- Syntax highlighting
+- Go-to-definition
+- Code completion
+- Hover
+
 ## Install
 
 First, you'll want to grab the Spade LSP (you might need to [install
@@ -7,6 +14,13 @@ rust](https://www.rust-lang.org/tools/install)):
 
 ```sh
 cargo install --locked --git https://gitlab.com/spade-lang/spade-language-server
+```
+
+Alternatively, you can also build the LSP yourself with changes if it's not up-to-date with the
+latest in Spade, as I have done:
+
+```sh
+cargo install --locked --git https://gitlab.com/ethanuppal/spade-language-server
 ```
 
 Install the plugin with your preferred package manager.
