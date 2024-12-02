@@ -1,6 +1,7 @@
-# spade.nvim
-
-Neovim language support for [Spade](https://spade-lang.org).
+<div style="text-align:center">
+    <h1>spade.nvim</h1>
+    <p>Neovim language support for [Spade](https://spade-lang.org).</p>
+</div>
 
 ![Example usage of the plugin](./assets/spade-github-dark.gif)
 
