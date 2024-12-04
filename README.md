@@ -22,7 +22,9 @@ Neovim language support for [Spade](https://spade-lang.org).
 
 ### Coming soon
 
-- Autoformatting with [spadefmt](http://github.com/ethanuppal/spadefmt)
+- Jump to `swim.toml` (#2)
+- Jump to Verilog (#4)
+- Autoformatting with [spadefmt](http://github.com/ethanuppal/spadefmt) (#3)
 
 <a name="install"></a>
 
