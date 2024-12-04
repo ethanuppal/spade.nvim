@@ -19,9 +19,6 @@ Neovim language support for [Spade](https://spade-lang.org).
 - Go-to-definition
 - Code completion
 - Hover
-
-### Coming soon
-
 - Jump to `swim.toml` (https://github.com/ethanuppal/spade.nvim/issues/2)
 - Jump to Verilog (https://github.com/ethanuppal/spade.nvim/issues/4)
 - Autoformatting with [spadefmt](http://github.com/ethanuppal/spadefmt) (https://github.com/ethanuppal/spade.nvim/issues/3)
