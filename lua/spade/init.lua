@@ -56,9 +56,8 @@ local function install_command()
 	end, {
 		nargs = "*",
 		complete = function(_, line)
-			local parts = vim.split(line, "%s+")
-			if #parts == 1 then
-				return subcommands
+			if string.match(vim.trim(line), "^Spade") then
+				return vim.tbl_keys(subcommands)
 			end
 
 			return {}
