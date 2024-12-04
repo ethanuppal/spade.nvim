@@ -20,6 +20,10 @@ Neovim language support for [Spade](https://spade-lang.org).
 - Code completion
 - Hover
 
+### Coming soon
+
+- Autoformatting with [spadefmt](http://github.com/ethanuppal/spadefmt)
+
 <a name="install"></a>
 
 ## Install
