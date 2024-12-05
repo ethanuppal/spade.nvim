@@ -1,10 +1,13 @@
-# spade.nvim
-
-Neovim language support for [Spade](https://spade-lang.org).
+<div align="center">
+ <img src="./assets/logo.svg" height="150px">
+<br/>
+<img src="./assets/name.svg" height="65px">
+ <p>Neovim language support for <a href="https://spade-lang.org">Spade</a>.</p>
+</div>
 
 ![Example usage of the plugin](./assets/spade-github-dark.gif)
 
-## Contents
+## 📕 Contents
 
 - [Features](#features)
 - [Requirements](#requirements)
@@ -71,7 +74,7 @@ You can supply configuration with the optional `opts` field, as in
 }
 ```
 
-Note that [lazy.nvim](https://github.com/folke/lazy.nvim) will automatically call `require("spade").setup({ ... })` for you lazily (no matter what the value of `opts.lazy`) as well as install the required dependencies.
+Note that [lazy.nvim](https://github.com/folke/lazy.nvim) will automatically call `require("spade").setup(opts)` for you lazily (no matter what the value of `opts.lazy`) as well as install the required dependencies.
 You may have to do them manually with another package manager, but the lazy
 loading will still be automatic and configurable.
 

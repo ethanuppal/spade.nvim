@@ -1,0 +1,55 @@
+<svg width="245" height="190" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink">
+   <!-- Created with SVG-edit - https://github.com/SVG-Edit/svgedit-->
+   <defs>
+      <symbol height="734px" id="svg_10" viewBox="0 0 602 734" width="602px" xmlns="http://www.w3.org/2000/svg"
+         xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" xmlns:xlink="http://www.w3.org/1999/xlink">
+         <title>neovim-mark@2x</title>Created with Sketch (http://www.bohemiancoding.com/sketch)
+         <defs>
+            <linearGradient id="svg_9" x1="50%" x2="50%" y1="0%" y2="100%">
+               <stop offset="0%" stop-color="#16B0ED" stop-opacity="0.8" />
+               <stop offset="100%" stop-color="#0F59B2" stop-opacity="0.84" />
+            </linearGradient>
+            <linearGradient id="svg_7" x1="50%" x2="50%" y1="0%" y2="100%">
+               <stop offset="0%" stop-color="#7DB643" />
+               <stop offset="100%" stop-color="#367533" />
+            </linearGradient>
+            <linearGradient id="svg_5" x1="50%" x2="50%" y1="0%" y2="100%">
+               <stop offset="0%" stop-color="#88C649" stop-opacity="0.8" />
+               <stop offset="100%" stop-color="#439240" stop-opacity="0.84" />
+            </linearGradient>
+         </defs>
+         <g fill="none" fill-rule="evenodd" id="svg_1">
+            <g id="svg_2" transform="translate(2.000000, 3.000000)">
+               <path d="m0,155.57l155,-156.57l0,728l-155,-154.76l0,-416.67z" fill="url(#svg_9)" id="svg_8" />
+               <path d="m443.06,156.98l156.94,-157.98l-3.18,728l-154.82,-154.78l1.06,-415.24z" fill="url(#svg_7)"
+                  id="svg_6"
+                  transform="translate(521.000000, 363.500000) scale(-1, 1) translate(-521.000000, -363.500000) " />
+               <path d="m154.99,0l403.01,615.19l-112.78,112.81l-403.22,-613.83l112.99,-114.17z" fill="url(#svg_5)"
+                  id="svg_4" />
+               <path d="m155,283.83l-0.21,24.17l-123.79,-183.29l11.46,-11.71l112.54,170.83z" fill="#000000"
+                  fill-opacity="0.13" id="svg_3" />
+            </g>
+         </g>
+      </symbol>
+      <symbol height="37.74025mm" id="svg_17" version="1.1" viewBox="0 0 43.357334 37.740249" width="43.357334mm"
+         xmlns="http://www.w3.org/2000/svg" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+         xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:svg="http://www.w3.org/2000/svg">
+
+         <g id="svg_13" transform="translate(-2.6810555,-3.36216)">
+            <path
+               d="m41.77,19.59a3.72,3.72 0 0 1 -3.71,3.71a3.72,3.72 0 0 1 -3.72,-3.71a3.72,3.72 0 0 1 3.72,-3.72a3.72,3.72 0 0 1 3.71,3.71"
+               fill="#ffffff" id="svg_15" stroke-linecap="round" stroke-width="1" />
+            <path
+               d="m11.73,3.6c-2.88,0 -4.32,0.87 -4.32,0.87l0.01,0.03l-0.03,-0.01c0.11,0.81 7.48,6.86 7.43,9.94c-0.17,2.5 -0.89,3.19 -1.45,4.89c-4.33,-5.87 -9.81,-6.07 -10.35,-6.08l-0.05,0l-0.01,0.02l-0.02,-0.01c-0.25,0.59 1.71,4.75 1.71,8.64c0,3.9 -1.96,8.06 -1.71,8.64l0.02,-0.01l0.01,0.02c0,0 5.87,0.13 10.58,-6.4c0.52,1.33 1.12,3.63 0.96,5.27c-0.33,1.85 -6.72,8.85 -6.83,9.62l0.04,-0.01l-0.01,0.03c0,0 4.87,2.1 16.46,-2.46c2.7,-1.06 4.84,-1.93 6.9,-2.74c0.26,3.02 1.51,6.65 1.82,7.02l0.02,-0.02l0.01,0.02c0,0 4.91,-0.93 6.75,-11.09c5.06,-3.81 6.14,-7.95 6.14,-7.95l-0.05,-0.03l0.05,-0.03c0,0 -1.38,-9.03 -19.73,-14.98c-6.08,-1.97 -11.55,-3.2 -14.35,-3.2l0,0.01zm26.28,12.71c1.92,0 3.48,1.56 3.48,3.49c0,0.92 -0.36,1.8 -1.01,2.45c-0.63,-0.52 -1.42,-0.8 -2.23,-0.8c-0.93,0 -1.82,0.37 -2.47,1.02c-0.8,-0.66 -1.26,-1.64 -1.26,-2.67c0,-1.93 1.56,-3.49 3.49,-3.49z"
+               fill="#000000" id="svg_14" stroke="#ffffff" stroke-linejoin="round" stroke-width="0.47" />
+         </g>
+      </symbol>
+   </defs>
+   <g class="layer">
+      <title>Layer 1</title>
+      <use id="svg_11" transform="matrix(0.217984 0 0 0.217984 62 28)" xlink:href="#svg_10" />
+      <use id="svg_18" transform="rotate(-18.8988 76.3722 84.283) matrix(0.520513 0 0 0.520513 32.3191 6.5952)"
+         xlink:href="#svg_17" />
+   </g>
+</svg>
