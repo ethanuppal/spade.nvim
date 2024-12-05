@@ -1,7 +1,7 @@
 <div align="center">
  <img src="./assets/logo.svg" height="150px">
 <br/>
-<img src="./assets/name.svg" height="75px">
+<img src="./assets/name.svg" height="65px">
  <p>Neovim language support for <a href="https://spade-lang.org">Spade</a>.</p>
 </div>
 
