@@ -4,16 +4,30 @@ local M = {}
 
 M.config = {
 	lsp_command = "spade-language-server",
+	lazy = true,
 }
+
+local function current_buffer_path()
+	return vim.fn.expand("%:p") or vim.uv.cwd()
+end
+
+local function if_online(callback)
+	-- https://stackoverflow.com/a/78354275/10652070
+	vim.system({ "ping", "-c", "3", "8.8.8.8" }, { text = true }, function(result)
+		-- because have to run on main thread
+		vim.schedule(function()
+			local is_connected = result.code == 0
+			if callback then
+				callback(is_connected)
+			end
+		end)
+	end)
+end
 
 --- Determines the closest parent directory containing `swim.toml`.
 function M.swim_root_dir()
-	local current_buffer_path = vim.fn.expand("%:p")
-	if current_buffer_path == nil then
-		current_buffer_path = vim.uv.cwd()
-	end
 	return vim.fs.dirname(vim.fs.find({ "swim.toml" }, {
-		path = current_buffer_path,
+		path = current_buffer_path(),
 		type = "file",
 		upward = true,
 	})[1])
@@ -79,33 +93,47 @@ local function setup_treesitter()
 		},
 		filetype = "spade",
 	}
+
+	-- update or install the grammar
+	if_online(function()
+		vim.cmd.TSUpdate("spade")
+	end)
 end
 
 local function setup_lsp()
-	-- see https://neovim.discourse.group/t/how-to-add-a-custom-server-to-nvim-lspconfig/3925
-	vim.api.nvim_create_autocmd("FileType", {
-		pattern = "spade",
-		callback = function()
-			install_command()
+	if M.swim_root_dir() ~= nil then
+		-- see https://neovim.discourse.group/t/how-to-add-a-custom-server-to-nvim-lspconfig/3925
+		vim.lsp.start({
+			name = "spade-lsp",
+			cmd = { M.config.lsp_command },
+			root_dir = M.swim_root_dir(),
+		})
+	else
+		vim.notify("No `swim.toml` configuration found", vim.log.levels.WARN)
+	end
+end
 
-			if M.swim_root_dir() ~= nil then
-				vim.lsp.start({
-					name = "spade-lsp",
-					cmd = { M.config.lsp_command },
-					root_dir = M.swim_root_dir(),
-				})
-			else
-				vim.notify("No `swim.toml` configuration found", vim.log.levels.WARN)
-			end
-		end,
-	})
+local function setup_plugin()
+	install_command()
+	setup_treesitter()
+	setup_lsp()
 end
 
 function M.setup(opts)
 	M.config = vim.tbl_deep_extend("force", M.config, opts or {})
 
-	setup_treesitter()
-	setup_lsp()
+	if opts.lazy and (not vim.fn.expand("%:e") == "spade") then
+		vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+			pattern = "*.spade",
+			callback = function()
+				setup_plugin()
+			end,
+			once = true,
+		})
+		setup_plugin()
+	else
+		setup_plugin()
+	end
 end
 
 return M
