@@ -1,9 +1,9 @@
 <div align="center">
- <!-- <img src="./assets/logo.svg" height="225px"> -->
- <h1><strong>spade.nvim</strong></h1>
+ <img src="./assets/logo.svg" height="225px">
+ <h1>spade.nvim
     <p>Neovim language support for <a href="https://spade-lang.org">Spade</a>.</p>
+        </h1>
 </div>
-<hr/>
 ![Example usage of the plugin](./assets/spade-github-dark.gif)
 
 ## 📕 Contents
