@@ -13,28 +13,27 @@ Neovim language support for [Spade](https://spade-lang.org).
 
 <a name="features"></a>
 
-## Features
+## ✨ Features
 
-- Syntax highlighting
-- Go-to-definition
-- Code completion
-- Hover
+- Syntax highlighting (automatically checks for updates if you have internet)
+- Language server support (e.g., code completion, go to definition, hover, error reporting)
 - Jump to `swim.toml` (<https://github.com/ethanuppal/spade.nvim/issues/2>)
 - Autoformatting with [spadefmt](http://github.com/ethanuppal/spadefmt) (<https://github.com/ethanuppal/spade.nvim/issues/3>)
-- Builtin keybinds? (<https://github.com/ethanuppal/spade.nvim/issues/7>)
+- Keybinds (<https://github.com/ethanuppal/spade.nvim/issues/7>)
+- 💤 Lazy loading by default
 
 <a name="requirements"></a>
 
-## Requirements
+## ⚡️ Requirements
+
+Depending on what package manager you're using, you may not need to worry about these (see [Install](#install)).
 
 - [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
 - [query files](https://gitlab.com/spade-lang/spade-vim)
 
-Depending on what package manager you're using, you may not need to worry about this (see [Install](#install)).
-
 <a name="install"></a>
 
-## Install
+## 📦 Install
 
 > [!NOTE]
 > This section assumes a Unix-like operating system.
@@ -66,17 +65,19 @@ You can supply configuration with the optional `opts` field, as in
 {
     "ethanuppal/spade.nvim",
     opts = {
-        lsp_command = "spade-language-server"
+        lsp_command = "spade-language-server",
+        lazy = true
     }
 }
 ```
 
-Note that [lazy.nvim](https://github.com/folke/lazy.nvim) will automatically call `require("spade").setup({ ... })` for you as well as install the required dependencies.
-You may have to do them manually with another package manager.
+Note that [lazy.nvim](https://github.com/folke/lazy.nvim) will automatically call `require("spade").setup({ ... })` for you lazily (no matter what the value of `opts.lazy`) as well as install the required dependencies.
+You may have to do them manually with another package manager, but the lazy
+loading will still be automatic and configurable.
 
 <a name="help"></a>
 
-## Help
+## ❓ Help
 
 ### Why isn't the LSP activating? I checked with `top` (or similar) and don't see the LSP process
 
