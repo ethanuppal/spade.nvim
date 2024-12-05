@@ -1,5 +1,5 @@
 <div align="center">
- <img src="./assets/logo.svg" width="250px">
+ <img src="./assets/logo.svg" height="225px">
  <h1><strong>spade.nvim</strong></h1>
     <p>Neovim language support for <a href="https://spade-lang.org">Spade</a>.</p>
 </div>
