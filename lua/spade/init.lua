@@ -8,10 +8,7 @@ M.config = {
 
 --- Determines the closest parent directory containing `swim.toml`.
 function M.swim_root_dir()
-	local current_buffer_path = vim.fn.expand("%:p")
-	if current_buffer_path == nil then
-		current_buffer_path = vim.uv.cwd()
-	end
+	local current_buffer_path = vim.fn.expand("%:p") or vim.uv.cwd()
 	return vim.fs.dirname(vim.fs.find({ "swim.toml" }, {
 		path = current_buffer_path,
 		type = "file",
@@ -79,31 +76,28 @@ local function setup_treesitter()
 		},
 		filetype = "spade",
 	}
+
+	-- update or install the grammar
+	vim.cmd.TSUpdate("spade")
 end
 
 local function setup_lsp()
-	-- see https://neovim.discourse.group/t/how-to-add-a-custom-server-to-nvim-lspconfig/3925
-	vim.api.nvim_create_autocmd("FileType", {
-		pattern = "spade",
-		callback = function()
-			install_command()
-
-			if M.swim_root_dir() ~= nil then
-				vim.lsp.start({
-					name = "spade-lsp",
-					cmd = { M.config.lsp_command },
-					root_dir = M.swim_root_dir(),
-				})
-			else
-				vim.notify("No `swim.toml` configuration found", vim.log.levels.WARN)
-			end
-		end,
-	})
+	if M.swim_root_dir() ~= nil then
+		-- see https://neovim.discourse.group/t/how-to-add-a-custom-server-to-nvim-lspconfig/3925
+		vim.lsp.start({
+			name = "spade-lsp",
+			cmd = { M.config.lsp_command },
+			root_dir = M.swim_root_dir(),
+		})
+	else
+		vim.notify("No `swim.toml` configuration found", vim.log.levels.WARN)
+	end
 end
 
 function M.setup(opts)
 	M.config = vim.tbl_deep_extend("force", M.config, opts or {})
 
+	install_command()
 	setup_treesitter()
 	setup_lsp()
 end

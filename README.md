@@ -7,8 +7,8 @@ Neovim language support for [Spade](https://spade-lang.org).
 ## Contents
 
 - [Features](#features)
+- [Requirements](#requirements)
 - [Install](#install)
-  - [Recommended install](#install-recommended)
 - [Help](#help)
 
 <a name="features"></a>
@@ -19,9 +19,18 @@ Neovim language support for [Spade](https://spade-lang.org).
 - Go-to-definition
 - Code completion
 - Hover
-- Jump to `swim.toml` (https://github.com/ethanuppal/spade.nvim/issues/2)
-- Jump to Verilog (https://github.com/ethanuppal/spade.nvim/issues/4)
-- Autoformatting with [spadefmt](http://github.com/ethanuppal/spadefmt) (https://github.com/ethanuppal/spade.nvim/issues/3)
+- Jump to `swim.toml` (<https://github.com/ethanuppal/spade.nvim/issues/2>)
+- Autoformatting with [spadefmt](http://github.com/ethanuppal/spadefmt) (<https://github.com/ethanuppal/spade.nvim/issues/3>)
+- Builtin keybinds? (<https://github.com/ethanuppal/spade.nvim/issues/7>)
+
+<a name="requirements"></a>
+
+## Requirements
+
+- [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
+- [query files](https://gitlab.com/spade-lang/spade-vim)
+
+Depending on what package manager you're using, you may not need to worry about this (see [Install](#install)).
 
 <a name="install"></a>
 
@@ -37,11 +46,7 @@ rust](https://www.rust-lang.org/tools/install)):
 cargo install --locked --git https://gitlab.com/spade-lang/spade-language-server
 ```
 
-<a name="install-recommended"></a>
-
-### Recommended
-
-Alternatively, you can also build the LSP yourself with changes if it's not up-to-date with the
+**Recommended**: Alternatively, you can also build the LSP yourself with changes if it's not up-to-date with the
 latest in Spade, as I have done:
 
 ```sh
@@ -52,24 +57,22 @@ Then, install the plugin with your preferred package manager.
 Here's how it would look like if you're using [lazy.nvim](https://github.com/folke/lazy.nvim):
 
 ```lua
+{ "ethanuppal/spade.nvim" }
+```
+
+You can supply configuration with the optional `opts` field, as in
+
+```lua
 {
     "ethanuppal/spade.nvim",
-    dependencies = {
-        "nvim-treesitter/nvim-treesitter",
-        { url = "https://gitlab.com/spade-lang/spade-vim" },
-        "neovim/nvim-lspconfig",
-    },
-    config = function()
-        require("spade").setup({
-            -- leave as {} for default options
-            lsp_command = "spade-language-server"
-        })
-    end
+    opts = {
+        lsp_command = "spade-language-server"
+    }
 }
 ```
 
-Then, run `:TSInstall spade` one time.
-You can later `:TSUninstall spade`.
+Note that [lazy.nvim](https://github.com/folke/lazy.nvim) will automatically call `require("spade").setup({ ... })` for you as well as install the required dependencies.
+You may have to do them manually with another package manager.
 
 <a name="help"></a>
 
