@@ -1,4 +1,4 @@
-<svg width="640" height="480" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg"
+<svg width="245" height="225" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg"
    xmlns:xlink="http://www.w3.org/1999/xlink">
    <!-- Created with SVG-edit - https://github.com/SVG-Edit/svgedit-->
    <defs>
@@ -48,9 +48,8 @@
    </defs>
    <g class="layer">
       <title>Layer 1</title>
-      <use id="svg_11" transform="matrix(0.217984 0 0 0.217984 62 68)" xlink:href="#svg_10" />
-      <use id="svg_18" transform="rotate(-18.8988 76.3722 84.283) matrix(0.520513 0 0 0.520513 32.3191 46.5952)"
+      <use id="svg_11" transform="matrix(0.217984 0 0 0.217984 62 38)" xlink:href="#svg_10" />
+      <use id="svg_18" transform="rotate(-18.8988 76.3722 84.283) matrix(0.520513 0 0 0.520513 32.3191 16.5952)"
          xlink:href="#svg_17" />
    </g>
 </svg>
-
