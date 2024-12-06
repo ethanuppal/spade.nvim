@@ -8,7 +8,7 @@ M.config = {
 }
 
 local function current_buffer_path()
-	return vim.fn.expand("%:p") or vim.uv.cwd()
+	return vim.fn.expand("%:p")
 end
 
 local function if_online(callback)
@@ -40,7 +40,6 @@ function M.check_health()
 			"Spade: cannot find `swim.toml` in parent directory. Are you sure you're currently in a Spade project?",
 			vim.log.levels.WARN
 		)
-		return
 	end
 end
 
