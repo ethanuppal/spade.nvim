@@ -5,6 +5,8 @@
  <p>Neovim language support for <a href="https://spade-lang.org">Spade</a>.</p>
 </div>
 
+## 🚀 Showcase
+
 ![Example usage of the plugin](./assets/spade-github-dark.gif)
 
 ## 📕 Contents
@@ -56,7 +58,8 @@ cargo install --locked --git https://gitlab.com/ethanuppal/spade-language-server
 ```
 
 Then, install the plugin with your preferred package manager.
-Here's how it would look like if you're using [lazy.nvim](https://github.com/folke/lazy.nvim):
+
+### [lazy.nvim](https://github.com/folke/lazy.nvim)
 
 ```lua
 { "ethanuppal/spade.nvim" }
@@ -69,14 +72,28 @@ You can supply configuration with the optional `opts` field, as in
     "ethanuppal/spade.nvim",
     opts = {
         lsp_command = "spade-language-server",
-        lazy = true
     }
 }
 ```
 
-Note that [lazy.nvim](https://github.com/folke/lazy.nvim) will automatically call `require("spade").setup(opts)` for you lazily (no matter what the value of `opts.lazy`) as well as install the required dependencies.
-You may have to do them manually with another package manager, but the lazy
-loading will still be automatic and configurable.
+Note that [lazy.nvim](https://github.com/folke/lazy.nvim) will automatically call `require("spade").setup(opts)` for you lazily as well as install the required dependencies.
+If you want to disable lazy loading, set `lazy = false` in the plugin spec as
+well in `opts`.
+
+### [Packer.nvim](https://github.com/wbthomason/packer.nvim)
+
+Manually install the [query files](https://gitlab.com/spade-lang/spade-vim),
+then add:
+
+```lua
+use {
+    "ethanuppal/spade.nvim",
+    config = function()
+        require("spade").setup()
+    end,
+    requires = {{ "nvim-treesitter/nvim-treesitter" }}
+}
+```
 
 <a name="help"></a>
 
