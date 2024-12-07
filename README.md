@@ -22,7 +22,7 @@
 
 - Syntax highlighting (automatically checks for updates if you have internet)
 - Language server support (e.g., code completion, go to definition, hover, error reporting)
-- Jump to `swim.toml` (<https://github.com/ethanuppal/spade.nvim/issues/2>)
+- Jump to `swim.toml` with `:Spade openSwim` (<https://github.com/ethanuppal/spade.nvim/issues/2>)
 - Autoformatting with [spadefmt](http://github.com/ethanuppal/spadefmt) (<https://github.com/ethanuppal/spade.nvim/issues/3>)
 - Keybinds (<https://github.com/ethanuppal/spade.nvim/issues/7>)
 - 💤 Lazy loading by default
