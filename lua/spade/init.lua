@@ -129,7 +129,6 @@ function M.setup(opts)
 			end,
 			once = true,
 		})
-		setup_plugin()
 	else
 		setup_plugin()
 	end
