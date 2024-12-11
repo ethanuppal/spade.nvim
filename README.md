@@ -44,7 +44,7 @@ Depending on what package manager you're using, you may not need to worry about 
 > This section assumes a Unix-like operating system.
 
 First, you'll want to grab the Spade LSP (you might need to [install
-rust](https://www.rust-lang.org/tools/install)):
+Rust](https://www.rust-lang.org/tools/install)):
 
 ```sh
 cargo install --locked --git https://gitlab.com/spade-lang/spade-language-server
