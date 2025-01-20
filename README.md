@@ -1,5 +1,4 @@
-<div align="center">
- <img src="./assets/logo.svg" height="150px">
+<div align="center"> <img src="./assets/logo.svg" height="150px">
 <br/>
 <img src="./assets/name.svg" height="65px">
  <p>Neovim language support for <a href="https://spade-lang.org">Spade</a>.</p>
@@ -12,7 +11,6 @@
 ## 📕 Contents
 
 - [Features](#features)
-- [Requirements](#requirements)
 - [Install](#install)
 - [Help](#help)
 
@@ -26,15 +24,6 @@
 - Autoformatting with [spadefmt](http://github.com/ethanuppal/spadefmt) (<https://github.com/ethanuppal/spade.nvim/issues/3>)
 - Keybinds (<https://github.com/ethanuppal/spade.nvim/issues/7>)
 - 💤 Lazy loading by default
-
-<a name="requirements"></a>
-
-## ⚡️ Requirements
-
-Depending on what package manager you're using, you may not need to worry about these (see [Install](#install)).
-
-- [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
-- [query files](https://gitlab.com/spade-lang/spade-vim)
 
 <a name="install"></a>
 
@@ -50,12 +39,7 @@ Rust](https://www.rust-lang.org/tools/install)):
 cargo install --locked --git https://gitlab.com/spade-lang/spade-language-server
 ```
 
-**Recommended**: Alternatively, you can also build the LSP yourself with changes if it's not up-to-date with the
-latest in Spade, as I have done:
-
-```sh
-cargo install --locked --git https://gitlab.com/ethanuppal/spade-language-server
-```
+You should also have [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter).
 
 Then, install the plugin with your preferred package manager.
 
