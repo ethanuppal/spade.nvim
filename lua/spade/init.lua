@@ -99,7 +99,7 @@ local function setup_treesitter()
 	end)
 end
 
-local function setup_lsp()
+local function start_lsp()
 	if M.swim_root_dir() ~= nil then
 		-- see https://neovim.discourse.group/t/how-to-add-a-custom-server-to-nvim-lspconfig/3925
 		vim.lsp.start({
@@ -115,7 +115,6 @@ end
 local function setup_plugin()
 	install_command()
 	setup_treesitter()
-	setup_lsp()
 end
 
 function M.setup(opts)
@@ -129,8 +128,15 @@ function M.setup(opts)
 			end,
 			once = true,
 		})
+		vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+			pattern = "*.spade",
+			callback = function()
+				start_lsp()
+			end,
+		})
 	else
 		setup_plugin()
+		start_lsp()
 	end
 end
 
