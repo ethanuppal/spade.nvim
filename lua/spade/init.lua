@@ -79,25 +79,18 @@ local function install_command()
 	})
 end
 
-local function setup_treesitter()
-	-- see https://github.com/nvim-treesitter/nvim-treesitter
-	require("nvim-treesitter.install").prefer_git = true
-	require("nvim-treesitter.parsers").get_parser_configs()["spade"] = {
-		install_info = {
-			url = "https://gitlab.com/spade-lang/tree-sitter-spade/",
-			files = { "src/parser.c" },
-			branch = "main",
-			generate_requires_npm = false,
-			requires_generate_from_grammar = false,
-		},
-		filetype = "spade",
-	}
-
-	-- update or install the grammar
-	if_online(function()
-		vim.cmd.TSUpdate("spade")
-	end)
-end
+vim.api.nvim_create_autocmd("User", {
+	pattern = "TSUpdate",
+	callback = function()
+		require("nvim-treesitter.parsers").spade = {
+			install_info = {
+				url = "https://gitlab.com/spade-lang/tree-sitter-spade",
+				branch = "main",
+				files = { "src/parser.c" },
+			},
+		}
+	end,
+})
 
 local function start_lsp()
 	if M.swim_root_dir() ~= nil then
@@ -112,11 +105,6 @@ local function start_lsp()
 	end
 end
 
-local function setup_plugin()
-	install_command()
-	setup_treesitter()
-end
-
 function M.setup(opts)
 	M.config = vim.tbl_deep_extend("force", M.config, opts or {})
 
@@ -124,7 +112,7 @@ function M.setup(opts)
 		vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
 			pattern = "*.spade",
 			callback = function()
-				setup_plugin()
+				install_command()
 			end,
 			once = true,
 		})
@@ -135,7 +123,7 @@ function M.setup(opts)
 			end,
 		})
 	else
-		setup_plugin()
+		install_command()
 		start_lsp()
 	end
 end

@@ -49,6 +49,9 @@ Then, install the plugin with your preferred package manager.
 { "ethanuppal/spade.nvim" }
 ```
 
+After installing the plugin with Lazy, install the treesitter parser with
+`:TSInstall spade`.
+
 You can supply configuration with the optional `opts` field, as in
 
 ```lua
@@ -78,6 +81,9 @@ use {
     requires = {{ "nvim-treesitter/nvim-treesitter" }}
 }
 ```
+
+After installing the plugin with Packer, install the treesitter parser with
+`:TSInstall spade`.
 
 <a name="help"></a>
 
