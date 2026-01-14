@@ -1,3 +1,5 @@
+Note: I am archiving this repo since I myself do not even use the plugin; I simply have the LSP, syntax highlighting, code formatting, etc. setup separately. Feel free to fork or start afresh.
+
 <div align="center"> <img src="./assets/logo.svg" height="150px">
 <br/>
 <img src="./assets/name.svg" height="65px">
